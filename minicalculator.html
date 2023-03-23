@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mini Calculator</title>
+    <style>
+      #bg{
+        background-color: darkgrey;
+        padding: 20px;
+        padding-top: 30px;
+       
+        margin-left: 550px;
+        margin-right: 550px;
+        border-radius: 15px;
+      }
+      #display{
+        padding: 20px;
+        background-color:#bccd95;
+      }
+      button {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      
+      .operator {
+        background-color: orange;
+
+      }
+      
+      
+    </style>
+    
+  </head>
+  <body>
+    <center>
+      <br><br><br>
+    <h3>MINI CALCULATOR</h3><br>
+    <div id="bg">
+    <p id="display"></p>
+    
+    <button onmouseover="this.style.backgroundColor='lightgrey'" onmouseout="this.style.backgroundColor=''" onclick="displayValue(1)">1</button>
+    <button onmouseover="this.style.backgroundColor='lightgrey'" onmouseout="this.style.backgroundColor=''" onclick="displayValue(2)">2</button>
+    <button onmouseover="this.style.backgroundColor='lightgrey'" onmouseout="this.style.backgroundColor=''" onclick="displayValue(3)">3</button>
+    <button onmouseover="this.style.backgroundColor='black',this.style.color='white'" onmouseout="this.style.backgroundColor=''" class="operator" onclick="setOperator('+')">+</button>
+    <br>
+    <button onmouseover="this.style.backgroundColor='lightgrey'" onmouseout="this.style.backgroundColor=''" onclick="displayValue(4)">4</button>
+    <button onmouseover="this.style.backgroundColor='lightgrey'" onmouseout="this.style.backgroundColor=''" onclick="displayValue(5)">5</button>
+    <button onmouseover="this.style.backgroundColor='lightgrey'" onmouseout="this.style.backgroundColor=''" onclick="displayValue(6)">6</button>
+    <button onmouseover="this.style.backgroundColor='black',this.style.color='white'" onmouseout="this.style.backgroundColor=''" class="operator" onclick="setOperator('-')">-</button>
+    <br>
+    <button onmouseover="this.style.backgroundColor='lightgrey'" onmouseout="this.style.backgroundColor=''" onclick="displayValue(7)">7</button>
+    <button onmouseover="this.style.backgroundColor='lightgrey'" onmouseout="this.style.backgroundColor=''" onclick="displayValue(8)">8</button>
+    <button onmouseover="this.style.backgroundColor='lightgrey'" onmouseout="this.style.backgroundColor=''" onclick="displayValue(9)">9</button>
+    <button onmouseover="this.style.backgroundColor='black',this.style.color='white'" onmouseout="this.style.backgroundColor=''" class="operator" onclick="setOperator('*')">*</button>
+    <br>
+
+    <button onmouseover="this.style.backgroundColor='black',this.style.color='white'" onmouseout="this.style.backgroundColor=''" class="operator" onclick="clearDisplay()">CLR</button>
+    <button onmouseover="this.style.backgroundColor='lightgrey'" onmouseout="this.style.backgroundColor=''" onclick="displayValue(0)">0</button>
+    <button onmouseover="this.style.backgroundColor='black',this.style.color='white'" onmouseout="this.style.backgroundColor=''" class="operator" onclick="displayOutput()">=</button>
+    <button onmouseover="this.style.backgroundColor='black',this.style.color='white'" onmouseout="this.style.backgroundColor=''" class="operator" onclick="setOperator('/')">/</button>
+    <br>
+
+
+
+    <script type="text/javascript">
+      var operand1 = "";
+      var operator = "";
+      var operand2 = "";
+      
+      function displayValue(value) {
+        var paragraph = document.getElementById("display");
+        paragraph.innerHTML += value;
+      }
+      function displayOutput(){
+        var paragraph = document.getElementById("display").innerHTML;
+        document.getElementById("display").innerHTML = eval(paragraph);
+
+      }
+      
+      function clearDisplay() {
+        document.getElementById("display").innerHTML = '';
+      }
+      
+      function setOperator(value) {
+        var paragraph = document.getElementById("display");
+        paragraph.innerHTML += " " + value + " ";
+      }
+      
+    
+    </script>
+  </div>
+  </center>
+</body>
+</html>
